@@ -16,7 +16,7 @@ export function CreateAdModal(){
     const [ useVoiceChannel, setuseVoiceChannel ] = useState(false)
 
     useEffect(()=>{
-      axios('http://localhost:3333/games').then(response => {
+      axios('http://18.231.10.201:3333/games').then(response => {
         setGames(response.data);
       })
     }, [])
@@ -31,7 +31,7 @@ export function CreateAdModal(){
         }
 
         try {
-        await axios.post(`http://localhost:3333/games/${data.game}/ads`,{
+        await axios.post(`http://18.231.10.201:3333/games/${data.game}/ads`,{
             name: data.name,
             yearsPlaying: Number(data.yearsPlaying),
             discord: data.discord,
